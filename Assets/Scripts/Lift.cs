@@ -62,5 +62,12 @@ public class Lift : MonoBehaviour {
             transform.Translate(Vector3.up * MovementSpeed * Time.deltaTime);
             deltaY += MovementSpeed * Time.deltaTime;
         }
+        else
+        {
+            Destroy(trigger);
+            transform.Translate(Vector3.down * 10);
+            deltaY = 0;
+            makeCube(trigger);
+        }
     }
 }
