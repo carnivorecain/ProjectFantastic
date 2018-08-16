@@ -4,6 +4,10 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/CAVESYSTEM*
+Oculus*
+Mezanix*
+FC_GoblinRanger*
 
 # Visual Studio cache directory
 .vs/
