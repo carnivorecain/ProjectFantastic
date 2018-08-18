@@ -13,7 +13,8 @@ public class TwirlOnCollision : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        twirl = GetComponent<Twirl>();
+        GameObject camera = GameObject.FindWithTag("MainCamera");
+        twirl = camera.GetComponent<Twirl>();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +32,9 @@ public class TwirlOnCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "CauseTwirl") { 
+        print("collided");
+        if (other.gameObject.tag == "CauseTwirl") {
+            print("Twirlin");
             twirling = true;
         }
     }

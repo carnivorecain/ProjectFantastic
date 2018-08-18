@@ -21,12 +21,13 @@ public class CC_Layout : MonoBehaviour
         {
             //            GameObject floor = Instantiate(floors[Random.Range(0, floors.Length)]);
             GameObject floor = Instantiate(floors[i]);
-            floor.transform.position = new Vector3(0f, floorheight * i, 0f);
-            floor.transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            floor.transform.parent = this.transform;
+            floor.transform.localPosition = new Vector3(0f, floorheight * (i+1), 0f);
+            floor.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             //            int numTimes = Random.Range(0, 4);
             //            for (int j = 0; j < numTimes; j++)
             //            {
-            if(i %2 == 1) {
+            if(i %2 == 0) {
                 floor.transform.Rotate(Vector3.up, 180f);
             }
             realFloors[i] = floor;
