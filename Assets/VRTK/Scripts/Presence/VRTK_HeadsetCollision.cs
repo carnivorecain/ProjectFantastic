@@ -276,6 +276,11 @@ namespace VRTK
 
         protected virtual bool ValidTarget(Transform target)
         {
+            if (target.gameObject.tag == "CauseTwirl")
+            {
+                return false;
+            }
+
             return (target != null && !(VRTK_PolicyList.Check(target.gameObject, targetListPolicy)));
         }
     }
