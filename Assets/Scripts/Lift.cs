@@ -9,29 +9,16 @@ public class Lift : MonoBehaviour {
     private float deltaY = 0.0f;
     public float raiseHeight = 10.0f;
 
-    public float MovementSpeed
-    {
-        get
-        {
-            return movementSpeed;
-        }
-
-        set
-        {
-            movementSpeed = value;
-        }
-    }
-
     // Use this for initialization
     void Start ()
     {
-        makeCube();
-        this.transform.Translate(Vector3.down * 0.1f);
+        makeTrigger();
     }
 
-    private void makeCube()
+    private void makeTrigger()
     {
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject cube = Instantiate(Resources.Load("Kicking Cube")) as GameObject;
         cube.transform.parent = this.transform;
         cube.transform.localScale = new Vector3(0.8f, 0.8f, 0.1f);
         cube.transform.localPosition= new Vector3(0.2f, 1.05f, 0.4f);
@@ -40,7 +27,8 @@ public class Lift : MonoBehaviour {
         //cube.transform.Translate(Vector3.up * 1.01f);
 //        cube.transform.Translate(Vector3.left * 0.2f);
 //        cube.transform.Translate(Vector3.back * 0.4f);
-        Rigidbody cubeRigidBody = cube.AddComponent<Rigidbody>(); // Add the rigidbody.
+//        Rigidbody cubeRigidBody = cube.AddComponent<Rigidbody>(); // Add the rigidbody.
+        Rigidbody cubeRigidBody = cube.GetComponent<Rigidbody>(); // Add the rigidbody.
         cubeRigidBody.mass = 0.5f; // Set the GO's mass to 5 via the Rigidbody.
         cubeRigidBody.useGravity = true;
         cubeRigidBody.isKinematic = false;
@@ -65,15 +53,15 @@ public class Lift : MonoBehaviour {
     {
         if (deltaY < raiseHeight)
         {
-            transform.Translate(Vector3.up * MovementSpeed * Time.deltaTime);
-            deltaY += MovementSpeed * Time.deltaTime;
+            transform.Translate(Vector3.up * movementSpeed * Time.deltaTime);
+            deltaY += movementSpeed * Time.deltaTime;
         }
         else
         {
             Destroy(trigger);
             transform.Translate(Vector3.down * raiseHeight);
             deltaY = 0;
-            makeCube();
+            makeTrigger();
         }
     }
 }
