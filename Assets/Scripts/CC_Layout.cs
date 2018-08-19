@@ -21,7 +21,8 @@ public class CC_Layout : MonoBehaviour
         {
             //            GameObject floor = Instantiate(floors[Random.Range(0, floors.Length)]);
             GameObject floor = Instantiate(floors[i]);
-            floor.transform.parent = this.transform;
+            floor.transform.SetParent(this.transform);
+            floor.transform.localScale = this.transform.localScale;
             floor.transform.localPosition = new Vector3(0f, floorheight * (i+1), 0f);
             floor.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             //            int numTimes = Random.Range(0, 4);
