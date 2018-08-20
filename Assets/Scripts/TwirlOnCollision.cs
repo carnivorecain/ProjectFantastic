@@ -32,7 +32,6 @@ public class TwirlOnCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print("collided");
         if (other.gameObject.tag == "CauseTwirl") {
             print("Twirlin");
             twirling = true;

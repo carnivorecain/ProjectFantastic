@@ -9,11 +9,15 @@ public class CC_Layout : MonoBehaviour
     public GameObject[] floors;
     public float floorheight = 2f;
 
+    private bool spawnedLevels = false;
     private GameObject[] realFloors;
 
     // Use this for initialization
     void Start()
     {
+    }
+
+    void spawnLevels() {
         int numFloors = floors.Length;
         realFloors = new GameObject[numFloors];
 
@@ -23,7 +27,7 @@ public class CC_Layout : MonoBehaviour
             GameObject floor = Instantiate(floors[i]);
             floor.transform.SetParent(this.transform);
             //            floor.transform.localScale = this.transform.localScale;
-            var scaleFactor = 1.0f;// / 4.0f;
+            var scaleFactor = 1.0f;// / 4.0f; //Scale all levels by this factor
             floor.transform.localScale = new Vector3(this.transform.localScale.x * scaleFactor, this.transform.localScale.y * scaleFactor, this.transform.localScale.z * scaleFactor);
             floor.transform.localPosition = new Vector3(0f, floorheight * (i+1), 0f);
             floor.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
@@ -36,10 +40,16 @@ public class CC_Layout : MonoBehaviour
             realFloors[i] = floor;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Return))
+        { // Spawn all levels when Return(Enter) is pressed
+            if(!spawnedLevels)
+            {
+                spawnLevels();
+                spawnedLevels = true;
+            }
+        }
+        
     }
 }
