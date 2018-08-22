@@ -169,7 +169,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1814510455303126, guid: f0141b9257607c547a105a97a9c8a40e,
     type: 2}
   m_PrefabInternal: {fileID: 605441220}
---- !u!114 &76435243
+--- !u!114 &76435242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -484,6 +484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434425515}
+  - component: {fileID: 434425516}
   m_Layer: 0
   m_Name: PlayerRoot
   m_TagString: Untagged
@@ -505,6 +506,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434425516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 434425514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0d5f80af48e974fb25d2e52e0ff85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 2
 --- !u!1001 &505501333
 Prefab:
   m_ObjectHideFlags: 0
@@ -712,7 +725,7 @@ Prefab:
     - target: {fileID: 224050677382556626, guid: f0141b9257607c547a105a97a9c8a40e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 841
+      value: 645
       objectReference: {fileID: 0}
     - target: {fileID: 224335475166782444, guid: f0141b9257607c547a105a97a9c8a40e,
         type: 2}
@@ -1819,6 +1832,31 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114364929997375890, guid: 47d4a404ca26a7b4898c0686ed09d112,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592896317182334, guid: 47d4a404ca26a7b4898c0686ed09d112,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114626682219810190, guid: 47d4a404ca26a7b4898c0686ed09d112,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114897926233718356, guid: 47d4a404ca26a7b4898c0686ed09d112,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114204885873584684, guid: 47d4a404ca26a7b4898c0686ed09d112,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052458461515646, guid: 47d4a404ca26a7b4898c0686ed09d112,
         type: 2}
       propertyPath: m_Enabled
       value: 0
