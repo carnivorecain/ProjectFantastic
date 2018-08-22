@@ -9,11 +9,10 @@ public class Ceiling : MonoBehaviour {
         print("spawning");
         GameObject camera = GameObject.FindWithTag("MainCamera");
         float playerHeight = camera.transform.position.y;
-        GameObject floor = GameObject.Find("Floor");
         GameObject ceiling = Instantiate(Resources.Load("Ceiling")) as GameObject;
         ceiling.transform.parent = this.transform;
-        ceiling.transform.position = floor.transform.position;
-        ceiling.transform.rotation = floor.transform.rotation;
+        ceiling.transform.position = this.transform.position;
+        ceiling.transform.rotation = this.transform.rotation;
         float ceilingHeight = playerHeight * 0.67f + 1f; // +1 for lift height
         ceiling.transform.Translate(Vector3.up * ceilingHeight);
 

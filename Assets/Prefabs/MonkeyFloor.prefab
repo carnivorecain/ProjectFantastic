@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 33169339912426936}
   - component: {fileID: 23819724918132114}
   - component: {fileID: 65662754092306252}
+  - component: {fileID: 114156938162178540}
   m_Layer: 0
   m_Name: Cube Start
   m_TagString: Untagged
@@ -510,7 +511,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400299856063608}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -632,7 +633,7 @@ BoxCollider:
   m_GameObject: {fileID: 1400299856063608}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -672,6 +673,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114156938162178540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1400299856063608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b698a9aa897ae4408b5001bb443e05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1988767892157440, guid: 200abaffa8ec9c1479c34f3ee11d4e58, type: 2}
 --- !u!114 &114174051713606080
 MonoBehaviour:
   m_ObjectHideFlags: 1
