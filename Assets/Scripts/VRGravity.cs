@@ -14,21 +14,44 @@ public class VRGravity : MonoBehaviour {
 
     void Update()
     {
-        //find body and feet
-        GameObject[] feet = GameObject.FindGameObjectsWithTag("Foot");
-        GameObject[] body = GameObject.FindGameObjectsWithTag("Body");
+        if(!isGrounded())
+        {
+            applyGravity();
+        }
+    }
 
-        //combine into one array
-        GameObject[] allContacts = body.Concat(feet).ToArray();
+    bool isGrounded()
+    {
+        GameObject[] heightTrackers = GameObject.FindGameObjectsWithTag("HeightTracker");
+
+        for (int i = 0; i < heightTrackers.Length; i++)
+        {
+            GameObject heightTracker = heightTrackers[i];
+            TrackObjectHeight tracker = heightTracker.GetComponent<TrackObjectHeight>();
+            if (tracker != null && tracker.isGrounded())
+            {
+                print(heightTracker.name + " is grounded");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    void applyGravity()
+    {
+        GameObject[] heightTrackers = GameObject.FindGameObjectsWithTag("HeightTracker");
 
         float minHeight = 0f;
-        for(int i = 0; i < allContacts.Length; i++)
+        for (int i = 0; i < heightTrackers.Length; i++)
         {
-            GameObject contact = allContacts[i];
-            VRContactPoint point = contact.GetComponent<VRContactPoint>();
-            float height = point.getHeight();
+            GameObject heightTracker = heightTrackers[i];
+            TrackObjectHeight tracker = heightTracker.GetComponent<TrackObjectHeight>();
+            if (tracker == null) continue;
+            float height = tracker.getHeight();
             if(minHeight == 0f || minHeight > height)
             {
+                print(heightTracker.name + "has height of " + height);
                 minHeight = height;
             }
         }
