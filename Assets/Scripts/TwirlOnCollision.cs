@@ -13,12 +13,15 @@ public class TwirlOnCollision : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameObject camera = GameObject.FindWithTag("MainCamera");
+        //GameObject camera = GameObject.FindWithTag("MainCamera");
+        GameObject camera = transform.parent.gameObject;
+        //if(camera != null) { print("Found Camera"); }
         twirl = camera.GetComponent<Twirl>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        //if (twirl != null) { print("Found Twirl"); }
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (twirling)
         {
             curAngle = curAngle += maxAngle * Time.deltaTime * speed;
@@ -32,7 +35,8 @@ public class TwirlOnCollision : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "CauseTwirl") {
+        if (other.gameObject.tag == "CauseTwirl")
+        {
             print("Twirlin");
             twirling = true;
         }
@@ -41,10 +45,9 @@ public class TwirlOnCollision : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag == "CauseTwirl") {
+        if (other.gameObject.tag == "CauseTwirl")
+        {
             twirling = false;
         }
     }
-
-
 }

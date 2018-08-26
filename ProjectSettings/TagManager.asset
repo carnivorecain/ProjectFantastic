@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - Teleporter
   - HeadsetCollider
+  - Kickable
   layers:
   - Default
   - TransparentFX
