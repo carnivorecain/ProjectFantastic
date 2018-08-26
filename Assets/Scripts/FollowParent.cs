@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class FollowParent : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public Vector3 positionOffset = new Vector3(0f, 0f, 0f);
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.localPosition = Vector3.zero;
+        transform.localPosition = positionOffset;
 
     }
 }

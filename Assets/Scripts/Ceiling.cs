@@ -13,7 +13,7 @@ public class Ceiling : MonoBehaviour {
         ceiling.transform.parent = this.transform;
         ceiling.transform.position = this.transform.position;
         ceiling.transform.rotation = this.transform.rotation;
-        float ceilingHeight = playerHeight * 0.67f + 1f; // +1 for lift height
+        float ceilingHeight = playerHeight * 0.67f + 1f + ceiling.transform.localScale.y / 2f; // +1 for lift height
         ceiling.transform.Translate(Vector3.up * ceilingHeight);
 
 
