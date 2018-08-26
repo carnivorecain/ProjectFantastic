@@ -75,8 +75,8 @@ public class LevelTeleport : MonoBehaviour {
     private void RaiseObject()
     {
         teleporting = true;
-        //Vector3 pos = player.transform.position;
-        //pos.y += raiseHeight;
         player.transform.Translate(new Vector3(0f, raiseHeight, 0f));
+        AudioSource audio = this.GetComponent<AudioSource>();
+        audio.Play();
     }
 }

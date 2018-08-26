@@ -9,6 +9,7 @@ TagManager:
   - Teleporter
   - HeadsetCollider
   - Kickable
+  - GoblinKing
   layers:
   - Default
   - TransparentFX

@@ -23,6 +23,8 @@ public class Kick : MonoBehaviour {
             Rigidbody rigidbody = trigger.GetComponent<Rigidbody>();
             Vector3 kickDir = trigger.transform.position - this.transform.position;
             rigidbody.AddForce(kickDir  * 1000f);
+            GameObject king = GameObject.FindGameObjectWithTag("GoblinKing");
+            Animator animator = king.GetComponent<Animator>();
         }
     }
 }

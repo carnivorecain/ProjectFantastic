@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayAudio : MonoBehaviour {
-
+    
+    public string audioTriggerTag;
     // Use this for initialization
     void Start() {
 
@@ -16,7 +19,9 @@ public class PlayAudio : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        AudioSource audio = this.GetComponent<AudioSource>();
-        audio.Play();
+        if(other.gameObject.tag == audioTriggerTag) {
+            AudioSource audio = this.GetComponent<AudioSource>();
+            audio.Play();
+        }
     }
 }
