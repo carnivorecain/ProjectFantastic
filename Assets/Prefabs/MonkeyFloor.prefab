@@ -2151,16 +2151,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1642706782229860}
-  m_LocalRotation: {x: -0.0051337127, y: 0.32584682, z: -0.03284044, w: 0.94483817}
-  m_LocalPosition: {x: -6.01, y: 0.7501795, z: -5.43}
-  m_LocalScale: {x: 1, y: 1, z: 1.3929}
+  m_LocalRotation: {x: -0.009924307, y: 0.4616632, z: -0.031720076, w: 0.8864324}
+  m_LocalPosition: {x: -7.9353, y: 0.9343, z: -3.4714}
+  m_LocalScale: {x: 0.8106783, y: 1, z: 1.3929}
   m_Children:
   - {fileID: 4186911494877144}
   - {fileID: 4964309243135500}
   - {fileID: 4243100910713696}
   m_Father: {fileID: 4421744833908480}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0.67, y: 38.034, z: -3.7500002}
+  m_LocalEulerAnglesHint: {x: 0.67, y: 55, z: -3.7500002}
 --- !u!4 &4569273828574896
 Transform:
   m_ObjectHideFlags: 1
