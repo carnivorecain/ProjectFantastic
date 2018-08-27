@@ -8,7 +8,7 @@ public class MessWithPlayer : MonoBehaviour {
     Twirl twirl;
 
     float maxAngle = 30;
-    bool twirling = true;
+    bool twirling = false;
     float speed = 10f;
 
     float curAngle = 0f;
